@@ -18,7 +18,7 @@ app.use(express.json());
 // =======================================================
 //ROUTER
 // Calls in the other files that route where the API information is coming from and HTML
-// require("./public/routes/apiRoutes")(app);
+require("./routes/apiRoutes")(app);
 require("./routes/htmlRoutes")(app);
 
 // =======================================================
