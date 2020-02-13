@@ -1,12 +1,11 @@
 //Calls npm package
 const express = require("express");
 const fs = require("fs");
+
 //assigns app to the express function, function tells node that we are creating an "Express" server.
 const app = express();
 //Using readfileSync because it needs to read the file first before JSON.parsing the data
-const getData = fs.readFileSync("./db/db.json");
-const getNotes = JSON.parse(getData);
-console.log(getNotes);
+
 //Creates the port where the local server is hosted.
 //it would listen to whatever "process.env.PORT" is and if nothing is found, it would jumpt to 8000
 let PORT = process.env.PORT || 8000
@@ -17,8 +16,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.static(__dirname + "/public"));
 app.use(express.json());
 
-const saveData = JSON.stringify(data)
-let saveNote = fs.writeFile("./db/db.json")
+// });
 // =======================================================
 //ROUTER
 // Calls in the other files that route where the API information is coming from and HTML
