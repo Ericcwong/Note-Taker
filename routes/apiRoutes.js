@@ -7,11 +7,11 @@ module.exports = function(app){
         //calls dbFile which is db.json
         res.json(dbFile);
         // assigning readfile to getdata
-        const getData = fs.readFileSync("./db/db.json");
-        //parses the data from db.json to objects
-        const getNotes = JSON.parse(getData);
-        //console logs the objects
-        console.log(getNotes);
+        // const getData = fs.readFileSync("./db/db.json");
+        // //parses the data from db.json to objects
+        // const getNotes = JSON.parse(getData);
+        // //console logs the objects
+        // console.log(getNotes);
         //This only works when user visits /api/notes or else nothing would be logged
     });
 
@@ -41,10 +41,23 @@ module.exports = function(app){
     });
 
     app.delete("/api/notes/:id", (req, res) => {
-        let id = req.param("id");
-        
+        let id = req.params.id;
+        fs.readFile("./db/db.json", "utf-8", (err,data) => {
+            if(err){
+                console.log(err);
+            }
+            let db = JSON.parse(data);
+            let updateNotes = db.filter(x => {
+                return x.id != id;
+            });
+            //this is where it takes what is in db.json and writes whatever is entered into the database. Then stringifing it to work with the dom
+            fs.writeFile("./db/db.json",JSON.stringify(updateNotes),(err) => {
+                if(err){
+                    console.log(err);
+                }
+            });
+        });
     });
-
 
 
 
