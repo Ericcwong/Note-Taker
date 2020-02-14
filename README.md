@@ -1,7 +1,7 @@
 
 # Note Taker
 This is an application for users who want to take quick notes. User could add as much each individual notes as they want, once the note is no longer valid. The user can click on the red trash can to get rid of the note.
-### <img src="readMe/herokuLogo.png" alt="Heroku Logo"> <a href = "https://ericcwong-note-taker.herokuapp.com/" target="_blank">deployed</a> Link
+### <img src="readMe/herokuLogo.png" alt="Heroku Logo"> <a href = "https://ericcwong-note-taker.herokuapp.com/" target="_blank">Deployed</a> Link
 
 ### <img src="readMe/githubLogo.png" alt="GitHub Logo"> <a href = "https://github.com/Ericcwong/Note-Taker" target="_blank">GitHub</a> Link
 
